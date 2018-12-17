@@ -21,7 +21,7 @@ def transform_date(ds):
 def main():
     today = datetime.datetime.today()
     ts = today.strftime("%Y-%m-%d")
-#     ts = "2018-12-18"
+    ts = "2018-12-18"
     stocks = []
     url = "http://www.jisilu.cn/jisiludata/newstock.php?qtype=apply"
     jo = utils.fetch_json(url)
@@ -34,9 +34,9 @@ def main():
             stocks.append("%s-%s"%(sid, name))
     
     if len(stocks) > 0:
-        ns = "申购新股：%s"%(' '.join([f.encode('utf-8') for f in stocks]))
+        ns = "申购新股：%s"%(' '.join(stocks))
         send_mail("申购新股", ns)
-        utils.print_with_time(ns.decode('utf-8'))
+        utils.print_with_time(ns)
     utils.print_with_time("Done")
 
 if __name__ == '__main__':
