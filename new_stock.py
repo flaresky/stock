@@ -21,7 +21,7 @@ def transform_date(ds):
 def main():
     today = datetime.datetime.today()
     ts = today.strftime("%Y-%m-%d")
-    ts = "2018-12-18"
+#     ts = "2018-12-18"
     stocks = []
     url = "http://www.jisilu.cn/jisiludata/newstock.php?qtype=apply"
     jo = utils.fetch_json(url)
