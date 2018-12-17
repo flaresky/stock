@@ -3,6 +3,7 @@ import re
 import datetime
 import utils
 import traceback
+from EmailSender import send_mail
 
 ds_ptn = re.compile(r".*(\d{2})-(\d{2}).*")
 def transform_date(ds):
@@ -34,9 +35,7 @@ def main():
     
     if len(stocks) > 0:
         ns = "申购新股：%s"%(' '.join([f.encode('utf-8') for f in stocks]))
-        es = EmailSender()
-        es.send_mail("申购新股", ns)
-        es.close()
+        send_mail("申购新股", ns)
         utils.print_with_time(ns.decode('utf-8'))
     utils.print_with_time("Done")
 
