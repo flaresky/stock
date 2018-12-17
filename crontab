@@ -1,0 +1,5 @@
+0 17 * * * bash dumpMysql.sh
+5 15 * * 1,2,3,4,5 cd /home/droidhen/flaresky/stock; python extractor.py -m 0 > extractor.py.log 2>&1
+25 15 * * 5 cd /home/droidhen/flaresky/stock; python crawler.py > crawler.py.log 2>&1
+30 9 * * 1,2,3,4,5 cd /home/droidhen/flaresky/stock; python new_stock_crawler.py > new_stock_crawler.py.log 2>&1
+0 10 * * 1,2,3,4,5 cd /home/droidhen/flaresky/stock; python new_stock_notify.py > new_stock_notify.py.log 2>&1
