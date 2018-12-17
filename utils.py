@@ -12,8 +12,8 @@ import mysqllib
 # sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout) 
 
 def print_with_time(str):
-    print datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S") + ' ',
-    print str
+    print(datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S") + ' ')
+    print(str)
     sys.stdout.flush()
 
 def fetch_url(url):
