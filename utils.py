@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import urllib2
+import urllib.request
 import json
 import time
 import datetime
@@ -19,7 +19,7 @@ def print_with_time(str):
 def fetch_url(url):
     for i in range(settings.urlRetryTimes):
         try:
-            data = urllib2.urlopen(url).read()
+            data = urllib.request.urlopen(url).read()
             if len(data) > 0:
                 return data
         except:
@@ -29,7 +29,7 @@ def fetch_url(url):
 def fetch_json(url):
     for i in range(settings.urlRetryTimes):
         try:
-            data = urllib2.urlopen(url).read()
+            data = urllib.request.urlopen(url).read()
             jo = json.loads(data)
             return jo
         except:
