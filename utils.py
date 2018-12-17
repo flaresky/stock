@@ -47,4 +47,4 @@ def get_stock_name_by_code(code):
     return res['name']
 
 if __name__ == '__main__':
-    print get_stock_name_by_code('000651')
+    print(get_stock_name_by_code('000651'))
