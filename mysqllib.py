@@ -26,8 +26,3 @@ def fetch_one(sql):
     if len(res) == 0:
         return None
     return res[0]
-
-if __name__ == '__main__':
-    sql = "select pe from hscei_pe where `date`='2001-10-31'";
-    res = fetch_one(sql)
-    print res
