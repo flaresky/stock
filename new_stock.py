@@ -12,7 +12,7 @@ def transform_date(ds):
         month = res.group(1)
         day = res.group(2)
         today = datetime.datetime.today()
-        if month >= today.month:
+        if int(month) >= int(today.month):
             return "%s-%s-%s"%(today.year, month, day)
         else:
             return "%s-%s-%s"%(today.year+1, month, day)
