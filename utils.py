@@ -39,3 +39,6 @@ def pad_str(s, length):
     if len(s) >= length:
         return s
     return ' ' * (length - len(s)) + s
+
+if __name__ == '__main__':
+    print(fetch_url('https://www.jisilu.cn/jisiludata/newstock.php?qtype=apply'))
