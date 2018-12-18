@@ -41,4 +41,6 @@ def pad_str(s, length):
     return ' ' * (length - len(s)) + s
 
 if __name__ == '__main__':
-    print(fetch_url('https://www.jisilu.cn/jisiludata/newstock.php?qtype=apply'))
+    url = 'https://www.jisilu.cn/jisiludata/newstock.php?qtype=apply'
+    print(fetch_url(url))
+    print(json.dumps(fetch_json(url)))
