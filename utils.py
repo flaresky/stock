@@ -30,7 +30,7 @@ def fetch_json(url):
     for i in range(settings.urlRetryTimes):
         try:
             data = urllib.request.urlopen(url).read()
-            jo = json.loads(data)
+            jo = json.loads(data.decode('utf-8'))
             return jo
         except:
             print_with_time(traceback.format_exc())
