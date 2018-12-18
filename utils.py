@@ -6,6 +6,7 @@ import datetime
 import sys
 import codecs
 import locale
+import traceback
 import settings
 
 # sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout) 
@@ -32,6 +33,7 @@ def fetch_json(url):
             jo = json.loads(data)
             return jo
         except:
+            print_with_time(traceback.format_exc())
             time.sleep(settings.sleepTime + i)
     return None
 
@@ -42,5 +44,5 @@ def pad_str(s, length):
 
 if __name__ == '__main__':
     url = 'https://www.jisilu.cn/jisiludata/newstock.php?qtype=apply'
-    print(fetch_url(url))
+#     print(fetch_url(url))
     print(json.dumps(fetch_json(url)))
