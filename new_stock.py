@@ -23,7 +23,7 @@ def main():
     ts = today.strftime("%Y-%m-%d")
 #     ts = "2018-12-18"
     stocks = []
-    url = "http://www.jisilu.cn/jisiludata/newstock.php?qtype=apply"
+    url = "https://www.jisilu.cn/jisiludata/newstock.php?qtype=apply"
     jo = utils.fetch_json(url)
     for row in jo['rows']:
         cell = row['cell']
