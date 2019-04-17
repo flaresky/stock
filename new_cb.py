@@ -5,7 +5,7 @@ import utils
 import traceback
 from EmailSender import send_mail
 
-notify_rate = 80
+notify_rate = 55
 
 def main():
     global notify_rate
