@@ -21,9 +21,9 @@ def transform_date(ds):
 def main():
     today = datetime.datetime.today()
     ts = today.strftime("%Y-%m-%d")
-#     ts = "2018-12-18"
+#     ts = "2019-08-21"
     stocks = []
-    url = "https://www.jisilu.cn/jisiludata/newstock.php?qtype=apply"
+    url = "https://www.jisilu.cn/data/new_stock/apply/?___jsl=LST___t"
     jo = utils.fetch_json(url)
     for row in jo['rows']:
         cell = row['cell']
